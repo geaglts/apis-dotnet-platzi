@@ -36,7 +36,7 @@ public class WeatherForecastController : ControllerBase
     [HttpDelete("{index}")]
     public IActionResult Delete(int index)
     {
-        if (ListWeatherForecast[index] == null)
+        if (ListWeatherForecast.Count < index)
         {
             return BadRequest(new { message = "Sorry but we can't found that WeatherForecast" });
         }
