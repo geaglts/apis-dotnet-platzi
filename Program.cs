@@ -20,6 +20,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// este es un middleware de pagina de bienvenida
+// Las demas rutas no sirven si implemento esto
+// app.UseWelcomePage();
+
 app.MapControllers();
 
 app.Run();
