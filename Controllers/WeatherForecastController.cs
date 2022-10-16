@@ -20,12 +20,15 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
+    [Route("all")] // Si los borro swagger funciona bien
+    [Route("[action]")] // Si los borro swagger funciona bien
     public IEnumerable<WeatherForecast> Get()
     {
         return ListWeatherForecast;
     }
 
     [HttpPost]
+    [Route("new")]
     public IActionResult Post(WeatherForecast weatherForecast)
     {
         weatherForecast.Date = DateTime.Now.ToString(new CultureInfo("es-MX"));
